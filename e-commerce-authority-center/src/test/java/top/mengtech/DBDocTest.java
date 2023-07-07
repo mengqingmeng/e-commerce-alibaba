@@ -33,7 +33,7 @@ public class DBDocTest {
     @Test
     public void buildDoc(){
         DataSource dataSource = applicationContext.getBean(DataSource.class);
-        EngineConfig engineConfig =  EngineConfig.builder().fileOutputDir("/Users/mqm/WORKSPACE/CODE/java/e-commerce-alibaba")
+        EngineConfig engineConfig =  EngineConfig.builder().fileOutputDir("/Users/mqm/WORKSPACE/CODE/java/e-commerce-alibaba/e-commerce-authority-center")
                 .openOutputDir(true)
                 .fileType(EngineFileType.HTML)
                 .produceType(EngineTemplateType.freemarker)
