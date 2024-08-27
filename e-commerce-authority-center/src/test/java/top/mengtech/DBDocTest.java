@@ -18,6 +18,7 @@ import javax.sql.DataSource;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.nio.file.Paths;
 
 /**
  * 数据库表文档生成
@@ -33,7 +34,7 @@ public class DBDocTest {
     @Test
     public void buildDoc(){
         DataSource dataSource = applicationContext.getBean(DataSource.class);
-        EngineConfig engineConfig =  EngineConfig.builder().fileOutputDir("/Users/mqm/WORKSPACE/CODE/java/e-commerce-alibaba/e-commerce-authority-center")
+        EngineConfig engineConfig =  EngineConfig.builder().fileOutputDir(Paths.get("output").toString())
                 .openOutputDir(true)
                 .fileType(EngineFileType.HTML)
                 .produceType(EngineTemplateType.freemarker)
@@ -41,7 +42,8 @@ public class DBDocTest {
 
         Configuration configuration = Configuration.builder()
                 .version("1.0.0")
-                .description("e-commerce-springcloud")
+                //.description("e-commerce-springcloud")
+                .description("tnit-mes")
                 .dataSource(dataSource)
                 .engineConfig(engineConfig)
                 .produceConfig(getProcessConfig())
